@@ -67,6 +67,7 @@ let fun1 = {
 
 //bind  
 Function.prototype.newBind = function(obj,...args){
+
     var _this = this;
     return function(){
         _this.newCall(obj, ...args)
@@ -74,10 +75,12 @@ Function.prototype.newBind = function(obj,...args){
 }
 
 let obj2={
+
     name: 'bob'
 }
 
 let fun2s = {
+
     name: 'alla',
     say: function(){
         console.log(this.name);
@@ -86,7 +89,9 @@ let fun2s = {
 }
 
 let o = fun2s.say.bind(obj2)
+
 o()
 
 let o1 = fun2s.say.newBind(obj2, 1,2,3)
+
 o1()
