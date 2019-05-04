@@ -7,6 +7,7 @@
 //call作用是改变this的指向
 
 Function.prototype.newCall = function(obj, ...args){
+
     obj.new  = this; //在obj上随便定义个属性   this指调用newCall的函数对象
     obj.new(...args);
     delete obj.new;
@@ -15,11 +16,13 @@ Function.prototype.newCall = function(obj, ...args){
 
 
 let obj={
+
     name: 'bob'
 }
 
 
 let fun = {
+
     name: 'alla',
     say: function(){
         console.log(this.name)
@@ -38,16 +41,19 @@ let fun = {
 
 
 Function.prototype.newApply = function(obj, args){
+
     obj.new = this;
     obj.new(...args);
     delete obj.new;
 }
 
 let obj1={
+
     name: 'bob'
 }
 
 let fun1 = {
+
     name: 'alla',
     say: function(){
         console.log(this.name);
