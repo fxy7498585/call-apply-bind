@@ -6,8 +6,6 @@
 
 //call作用是改变this的指向
 
-
-
 Function.prototype.newCall = function(obj, ...args){
     obj.new  = this; //在obj上随便定义个属性   this指调用newCall的函数对象
     obj.new(...args);
